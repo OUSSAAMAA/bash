@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Author: Agnina Oussama
+# Date Created: 27/12/2023
+# Last Modified: 30/12/2023
+# Description: "This script is used to gather all files in a Directory and archive them."
+
+# Specify the output location (replace '/path/to/backup' with your desired location)
+backup_location="$HOME/Desktop/"
+currentDir=$(pwd)
+dirname=$(basename "$currentDir")  
+# process start
+echo "Hi ${USER^}"
+echo "### Starting the archiving of ##--'$(pwd)'--### Process ..."
+
+# Create the backup using tar
+tar -cf "${backup_location}/_${dirname}_$(date +%d-%m_%H-%M-%S)".tar ./* 2>/dev/null
+
+echo "Success"
+
+exit 0
+
